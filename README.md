@@ -1,4 +1,4 @@
-
+#### Alunos: Carlos, Gustavo, Rafael
 ## Instruções
 
 #### npm install express sequelize sqlite3 zod bcrypt dotenv
