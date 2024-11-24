@@ -1,12 +1,10 @@
 const usuarioSchema = require("../schemas/usuario");
-const encriptador = require("../services/EncriptadorDeSenhas");
 const { Usuario } = require("../models");
 
 exports.cadastrarUsuario = async (req, res) => {
   const dados = req.body;
   try {
     const usuario = usuarioSchema.parse(dados);
-    usuario.senha = await encriptador.encriptar(usuario.senha);
     const usuarioSalvo = await Usuario.create(usuario);
 
     res.status(201).send({
